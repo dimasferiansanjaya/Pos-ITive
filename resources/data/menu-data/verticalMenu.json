@@ -1,0 +1,29 @@
+{
+  "menu": [
+    {
+      "url": "home",
+      "name": "Home",
+      "icon": "home",
+      "slug": "home"
+    },
+    {
+      "name": "Page Layouts",
+      "icon": "mail",
+      "slug": "",
+      "badge": "5",
+      "badgeClass": "badge rounded-pill badge-light-danger ms-auto me-1",
+      "submenu": [
+        {
+          "url": "layouts/empty",
+          "name": "Layout Empty",
+          "icon": "circle",
+          "slug": "layout-empty"
+        }
+      ]
+    },
+    {
+      "navheader": "Administrator",
+      "slug": ""
+    }
+  ]
+}
