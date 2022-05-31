@@ -9,10 +9,11 @@ class StaterkitController extends Controller
     // home
     public function home()
     {
+        $pageConfigs = ['layoutWidth' => 'full'];
         $breadcrumbs = [
             ['link' => "home", 'name' => "Home"], ['name' => "Index"]
         ];
-        return view('/content/home', ['breadcrumbs' => $breadcrumbs]);
+        return view('/content/home', compact('pageConfigs','breadcrumbs'));
     }
 
     // Layout collapsed menu
