@@ -7,17 +7,23 @@
       "slug": "home"
     },
     {
-      "name": "Page Layouts",
-      "icon": "mail",
+      "name": "Products",
+      "icon": "shopping-bag",
       "slug": "",
       "badge": "5",
       "badgeClass": "badge rounded-pill badge-light-danger ms-auto me-1",
       "submenu": [
         {
-          "url": "layouts/empty",
-          "name": "Layout Empty",
+          "url": "products/categories",
+          "name": "Categories",
           "icon": "circle",
-          "slug": "layout-empty"
+          "slug": "products.categories"
+        },
+        {
+          "url": "products/list",
+          "name": "List",
+          "icon": "circle",
+          "slug": "products.list"
         }
       ]
     },

@@ -18,7 +18,8 @@ use App\Http\Controllers\LanguageController;
 Route::get('/', [StaterkitController::class, 'home'])->name('home');
 Route::get('home', [StaterkitController::class, 'home'])->name('home');
 // Route Components
-Route::get('layouts/empty', [StaterkitController::class, 'layout_empty'])->name('layout-empty');
+Route::get('products/categories', [StaterkitController::class, 'layout_empty'])->name('products.categories');
+Route::get('products/list', [StaterkitController::class, 'layout_empty'])->name('products.list');
 
 // locale Route
 Route::get('lang/{locale}', [LanguageController::class, 'swap']);
