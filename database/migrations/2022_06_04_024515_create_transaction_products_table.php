@@ -13,20 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->string('name');
-            $table->foreignUuid('shop_id')
+        Schema::create('transaction_products', function (Blueprint $table) {
+            $table->foreignUuid('transaction_id')
                 ->constrained()
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
-            $table->timestamps();
-        });
-        Schema::table('categories', function (Blueprint $table) {
-            $table->foreignUuid('parent_id')
-                ->constrained('categories')
+            $table->foreignUuid('product_id')
+                ->constrained()
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
+            $table->index(['transaction_id','product_id']);
+            $table->integer('quantity');
+            $table->double('price');
+            $table->timestamps();
         });
     }
 
@@ -37,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('transaction_products');
     }
 };

@@ -13,20 +13,21 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->string('name');
+        Schema::create('shop_users', function (Blueprint $table) {
+            $table->foreignUuid('user_id')
+                ->constrained()
+                ->cascadeOnUpdate()
+                ->cascadeOnDelete();
             $table->foreignUuid('shop_id')
                 ->constrained()
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
+            $table->enum('role', [
+                'admin',
+                'employee'
+            ]);
+            $table->index(['user_id','shop_id']);
             $table->timestamps();
-        });
-        Schema::table('categories', function (Blueprint $table) {
-            $table->foreignUuid('parent_id')
-                ->constrained('categories')
-                ->cascadeOnUpdate()
-                ->cascadeOnDelete();
         });
     }
 
@@ -37,6 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('shop_users');
     }
 };
