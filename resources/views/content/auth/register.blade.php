@@ -68,7 +68,7 @@ $configData = Helper::applClasses();
             <div class="d-flex col-lg-4 align-items-center auth-bg px-2 p-lg-5">
                 <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
                     <h2 class="card-title fw-bold mb-1">Adventure starts here 🚀</h2>
-                    <p class="card-text mb-2">Make your app management easy and fun!</p>
+                    <p class="card-text mb-2">Make your business easy and fun!</p>
                     <form class="auth-register-form mt-2" action="{{ route('register') }}" method="POST">
                         @method('POST')
                         @csrf
